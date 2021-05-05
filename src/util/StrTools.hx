@@ -9,7 +9,7 @@ using StringTools;
  */
 class StrTools {
 	public static function removeDoubleSpace(str:String):String {
-		return str.replace(' ', ' ');
+		return str.replace('  ', ' ');
 	}
 
 	public static function removeSpace(str:String):String {

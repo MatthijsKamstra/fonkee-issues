@@ -1,3 +1,5 @@
+package util;
+
 class SaveFile {
 	public function new(path:String, map:Map<String, String>) {
 		var content = '"title","description"\n';
