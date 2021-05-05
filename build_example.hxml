@@ -1,0 +1,13 @@
+-lib thx.csv
+-cp src
+-D analyzer-optimize
+-main ExampleFiles
+--interp
+
+--next
+
+-lib thx.csv
+-cp src
+-D analyzer-optimize
+-main ExampleMain
+--interp

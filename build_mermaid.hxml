@@ -1,0 +1,5 @@
+-lib thx.csv
+-cp src
+-D analyzer-optimize
+-main Mermaid
+--interp
