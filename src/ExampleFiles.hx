@@ -58,8 +58,8 @@ And some more
 	}
 
 	function init() {
-		exportPlanning('export_masterfiles/planning_2021.csv');
-		exportEstimate('export_masterfiles/estimate_2021.csv');
+		exportPlanning('docs/data/planning_2021.csv');
+		exportEstimate('docs/data/estimate_2021.csv');
 	}
 
 	function exportPlanning(source:String) {

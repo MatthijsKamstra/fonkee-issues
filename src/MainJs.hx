@@ -9,8 +9,8 @@ class MainJs {
 		trace('MainJs');
 
 		// modified from http://html5demos.com/file-api
-		var holder = document.getElementById('holder'),
-			state = document.getElementById('status');
+		var holder = document.getElementById('holder');
+		var state = document.getElementById('status');
 
 		if (untyped window.FileReader == 'undefined') {
 			state.className = 'fail';

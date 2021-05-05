@@ -9,8 +9,8 @@ class ExampleMain {
 	public function new() {
 		trace('Convert csv to github friendly csv');
 
-		convertDefaultEstimate('export_masterfiles/estimate_2021.csv');
-		convertDefaultPlanning('export_masterfiles/planning_2021.csv');
+		convertDefaultEstimate('docs/data/estimate_2021.csv');
+		convertDefaultPlanning('docs/data/planning_2021.csv');
 	}
 
 	function convertDefaultPlanning(source:String) {
@@ -138,7 +138,7 @@ ${out}
 	}
 
 	// function convertDefaultPlanning() {
-	// 	var content:String = sys.io.File.getContent('export_masterfiles/planning_2021.csv');
+	// 	var content:String = sys.io.File.getContent('docs/data/planning_2021.csv');
 	// 	var decoded = thx.csv.Csv.decode(content);
 	// }
 

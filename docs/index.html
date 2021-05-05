@@ -14,6 +14,7 @@
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧜‍♀️</text></svg>">
 
     <link rel="stylesheet" href="style.css" />
+
     <title>Mermaid</title>
 </head>
 
@@ -74,9 +75,30 @@
                 </div>
 
                 <p class="badge">#planning (my gantt dynamic)</p>
+                <ul>
+                    <li>
+                        <a href="data/planning_2021.csv">data/planning_2021.csv</a>
+                    </li>
+                    <li>
+                        <a href="data/planning_2021.csv.converted.md">data/planning_2021.csv.converted.md</a>
+                    </li>
+
+                </ul>
                 <div id="planning"></div>
 
                 <p class="badge">#planning2 (my gantt dynamic)</p>
+                <ul>
+                    <li>
+                        <a href="data/estimate_2021.csv">data/estimate_2021.csv</a>
+                    </li>
+                    <li>
+                        <a href="data/estimate_2021.csv.converted.csv">data/estimate_2021.converted.md</a>
+                    </li>
+                    <li>
+                        <a
+                            href="data/estimate_2021.csv.planning.converted.md">data/estimate_2021.csv.planning.converted.md</a>
+                    </li>
+                </ul>
                 <div id="planning2"></div>
 
             </div>
@@ -98,7 +120,7 @@
     <script>
 
         // Fetch API data
-        fetch('../export_masterfiles/planning_2021.csv.converted.md')
+        fetch('data/planning_2021.csv.converted.md')
             .then(function (response) {
                 return response.text();
             })
@@ -116,7 +138,7 @@
             });
 
         // Fetch API data
-        fetch('../export_masterfiles/estimate_2021.csv.planning.converted.md')
+        fetch('data/estimate_2021.csv.planning.converted.md')
             .then(function (response) {
                 return response.text();
             })
