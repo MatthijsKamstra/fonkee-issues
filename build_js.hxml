@@ -1,7 +1,7 @@
 -lib thx.csv
 -cp src
 -main MainJs
--js bin/csv_2_git.js
+-js docs/csv_2_git.js
 -D js-es=6
 --debug
 --dce full
