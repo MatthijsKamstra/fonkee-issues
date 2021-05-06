@@ -21,9 +21,6 @@ This project is written in [Haxe](http://www.haxe.org) and transpiled to JavaScr
 - Perhaps you want a [Haxe editor](http://matthijskamstra.github.io/haxejs/haxe/quick-install.html#step-2-install-editor)?
 - And install [MacDown](http://macdown.uranusjr.com/) to read and write Markdown (this document is written in it).
 
-Confused? Go see a doctor!
-Confused about Haxe? Please don't hesitate to ask [Matthijs Kamstra](mailto:matthijs@fonk.amsterdam)!
-
 <a href="structure"></a>
 
 ## Structure
@@ -31,16 +28,16 @@ Confused about Haxe? Please don't hesitate to ask [Matthijs Kamstra](mailto:matt
 This is the short explanation about the folder structure and files
 
 ```
+- package.json (automatic build and Node.js file)
+- readme/icons/todo/git (nice to haves)
+- build.hxml (default build file)
+- build_all.hxml (used to build multiple targets/release/debug)
+- build_release.hxml (build file without source-mapping/debug info/etc)
+- build_debug.hxml (probably the same as build.hxml)
 + .vscode (files needed for Virtual Studio Code to work with Haxe)
-+ bin (export folder)
-	- build.hxml (default build file)
-	- build_all.hxml (used to build multiple targets/release/debug)
-	- build_release.hxml (build file without source-mapping/debug info/etc)
-	- build_debug.hxml (probably the same as build.hxml)
++ docs (export folder)
 + src (source folder)
 	- Main.hx (default starting point Haxe)
-	- package.json (automatic build and Node.js file)
-	- readme/icons/todo/git (nice to haves)
 ```
 
 The `build.hxml` is the default build file. It transpiles the Haxe-code to a target (js, python, etc) language. It's probably the same as `build_debug.hxml`. It uses trace info, debug info, etc.
@@ -62,14 +59,14 @@ You need to install [Haxe](http://www.haxe.org), I have written a [quick-install
 
 Once you have Haxe, you need to install the (Haxe) libs used in this project.
 
-```
+```bash
 cd /path/to/folder/
 haxelib install build.hxml
 ```
 
 Build with Haxe (in terminal):
 
-```
+```bash
 cd /path/to/folder/
 haxe build.hxml
 ```
@@ -78,14 +75,14 @@ Install [NPM](http://matthijskamstra.github.io/haxejs/haxe/quick-install.html#st
 
 Automated build with terminal (after you installed NPM)
 
-```
+```bash
 cd /path/to/folder/
 npm run watch
 ```
 
 If this is a node.js project, use the following code to install the node packages:
 
-```
+```bash
 cd /path/to/folder/
 npm install
 ```
