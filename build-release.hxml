@@ -17,8 +17,8 @@
 --next
 
 
--main MainJs
--js docs/js/csv_2_git.js
+-main FunkeeUpload
+-js docs/js/FunkeeUpload.js
 -D js-es=6
 --debug
 --dce full
@@ -26,8 +26,8 @@
 
 --next
 
--main UploadFile
--js docs/js/upload.js
+-main FonkeeMain
+-js docs/js/FonkeeMain.js
 -D js-es=6
 --debug
 --dce full
