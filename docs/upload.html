@@ -4,120 +4,89 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
 
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐡</text></svg>">
 
     <link rel="stylesheet" href="style.css" />
 
-    <title>Mermaid</title>
+    <title>Fonkee Issues 🐡</title>
 </head>
 
-<body>
+<body class="d-flex flex-column h-100">
 
     <div data-load="./components/nav.html"></div>
     <div data-load="./components/hero.html"></div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1>Mermaid</h1>
 
-                <a href="https://mermaid-js.github.io/mermaid/#/"
-                    target="_blank">https://mermaid-js.github.io/mermaid/#/</a>
+    <main>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-8 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1>Photo Watermark</h1>
+                            <form id="photo-watermark">
+                                <!-- <div class="form-group">
+                                    <label for="formGroupExampleInput">Example label</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                        placeholder="What is your name">
+                                </div> -->
+                                <div class="form-group" style="display:none">
+                                    <label for="exampleFormControlFile1">Example file input</label>
+                                    <input type="file" class="form-control-file" id="exampleFormControlFile1"
+                                        accept="image/*">
+                                </div>
 
-                <p class="badge">.mermaid (small gantt)</p>
-                <div class="mermaid">
-                    gantt
-                    title A Gantt Diagram
-                    dateFormat YYYY-MM-DD
-                    section Section
-                    A task :a1, 2014-01-01, 30d
-                    Another task :after a1 , 20d
-                    section Another
-                    Task in sec :2014-01-12 , 12d
-                    another task : 24d
+                                <div class="form-group">
+                                    <span class="fileSelect">
+                                        <img src="" id="filePreview" class="img-fluid img-thumbnail"
+                                            alt="Responsive image">
+                                    </span>
+                                    <span id="filePreviewText" class="text-muted"></span>
+                                    <button class="fileSelect btn btn-dark btn-block">Select an image file
+                                        (jpg/png)</button>
+                                </div>
+
+                                <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+                            </form>
+                            <div id="container-canvas">
+                                <canvas id="canvas-watermark"></canvas>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button id="btn-download" class="btn btn-dark">download</button>
+                                    <button id="btn-base64" class="btn btn-dark d-none">base64</button>
+                                    <button id="btn-base64-2" class="btn btn-dark">open in tab</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
                 </div>
-
-                <p class="badge">.mermaid (my gantt)</p>
-                <div class="mermaid">
-                    gantt
-                    title A Gantt Diagram
-                    dateFormat YYYY-MM-DD
-                    excludes weekends
-
-                    %% section Section
-                    %% A task :a1, 2014-01-01, 30d
-                    %% Another task :after a1 , 20d
-                    %% section Another
-                    %% Task in sec :2014-01-12 , 12d
-                    %% another task : 24d
-
-
-                    section Start project
-                    Briefing :2021-12-27, 5d
-                    Research :2021-06-14, 5d
-                    Estimate :2021-02-22, 5d
-                    Meeting :2021-06-07, 5d
-
-                    section Design
-                    Scope :2021-07-26, 5d
-                    Research :2021-03-22, 5d
-                    Handover :2021-03-22, 5d
-
-                    section Development
-                    Team meet :2021-01-11, 5d
-                    Setup Git :2021-05-31, 5d
-                    Server setup :2021-02-08, 5d
-
-
-                </div>
-
-                <p class="badge">#planning (my gantt dynamic)</p>
-
-
-                <a href="data/planning_2021.csv">data/planning_2021.csv</a>
-                <pre><code data-load-inner="data/planning_2021.csv"></code></pre>
-                <a href="data/planning_2021.csv.converted.md">data/planning_2021.csv.converted.md</a>
-                <pre><code data-load-inner="data/planning_2021.csv.converted.md"></code></pre>
-
-                <div id="planning"></div>
+                <!-- /.col-6 -->
 
 
 
 
-                <p class="badge">#planning2 (my gantt dynamic)</p>
-
-                <a href="data/estimate_2021.csv">data/estimate_2021.csv</a>
-                <pre><code data-load-inner="data/estimate_2021.csv"></code></pre>
-
-                <a href="data/estimate_2021.csv.converted.csv">data/estimate_2021.converted.md</a>
-                <pre><code data-load-inner="data/estimate_2021.csv.converted.csv"></code></pre>
-
-                <a href="data/estimate_2021.csv.planning.converted.md">data/estimate_2021.csv.planning.converted.md</a>
-                <pre><code data-load-inner="data/estimate_2021.csv.planning.converted.md"></code></pre>
-
-                <div id="planning2"></div>
             </div>
         </div>
-    </div>
+        <!-- /.container -->
+    </main>
+    <!-- /#main -->
 
 
     <div data-load="./components/footer.html"></div>
 
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-        crossorigin="anonymous"></script>
-
 
     <!-- Monkee code -->
     <script src="https://matthijskamstra.github.io/monkee-z/js/monkee_load.js"></script>
@@ -125,55 +94,9 @@
     <!-- mermaid.js -->
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 
-    <script>
+    <!-- custom -->
+    <script src="js/upload.js"></script>
 
-        // Fetch API data
-        fetch('data/planning_2021.csv.converted.md')
-            .then(function (response) {
-                return response.text();
-            })
-            .then(function (data) {
-                // console.log(data);
-                var element = document.getElementById('planning');
-
-                var insertSvg = function (svgCode, bindFunctions) {
-                    element.innerHTML = svgCode;
-                };
-
-                var graphDefinition = data.replaceAll('```mermaid', '').replaceAll('```', '').trim();
-                // console.log(graphDefinition);
-                var graph = mermaid.mermaidAPI.render('planningWrapper', graphDefinition, insertSvg);
-            });
-
-        // Fetch API data
-        fetch('data/estimate_2021.csv.planning.converted.md')
-            .then(function (response) {
-                return response.text();
-            })
-            .then(function (data) {
-                //console.log(data);
-                var element2 = document.getElementById('planning2');
-                //console.log(element);
-
-                var insertSvg2 = function (svgCode, bindFunctions) {
-                    element2.innerHTML = svgCode;
-                };
-
-                var graphDefinition2 = data.replaceAll('```mermaid', '').replaceAll('```', '').trim();
-                // console.log(graphDefinition);
-                var graph2 = mermaid.mermaidAPI.render('planningWrapper2', graphDefinition2, insertSvg2);
-            });
-
-
-
-    </script>
-
-    <script>
-        mermaid.initialize({
-            startOnLoad: true,
-            'theme': 'neutral'
-        });
-    </script>
 
 
 </body>
