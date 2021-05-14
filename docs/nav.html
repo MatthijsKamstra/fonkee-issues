@@ -1,0 +1,98 @@
+<nav class="navbar  navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="./">🐡</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <!-- <li class="nav-item">
+					<a class="nav-link" href="spa.html">SPA</a>
+				</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="chain/">Chain</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="load/">Load</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="bugger/">Bugger</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Chain examples
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="demo/chain/array.html">Array</a>
+                    <a class="dropdown-item" href="demo/chain/basic.html">Basic</a>
+                    <a class="dropdown-item" href="demo/chain/click.html">Click</a>
+                    <a class="dropdown-item" href="demo/chain/code.html">Code</a>
+                    <a class="dropdown-item" href="demo/chain/copy.html">Copy</a>
+                    <a class="dropdown-item" href="demo/chain/csv.html">Csv</a>
+                    <a class="dropdown-item" href="demo/chain/fetch.html">Fetch</a>
+                    <a class="dropdown-item" href="demo/chain/json.html">json</a>
+                    <a class="dropdown-item" href="demo/chain/timer.html">Timer</a>
+                    <a class="dropdown-item" href="demo/chain/markdown.html">Markdown</a>
+                    <a class="dropdown-item" href="demo/chain/message.html">Message</a>
+                    <a class="dropdown-item" href="demo/chain/photo.html">Photo</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Load examples
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="demo/load/index.html">Index</a>
+            </div>
+        </li>
+
+    -->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<script>
+    console.warn('Nav Injected code: Here be dragons!');
+
+
+    var rootLocal = 'http://127.0.0.1:5500/docs/';
+    var rootGit = 'https://matthijskamstra.github.io/monkee-z/';
+
+    zinit();
+    function zinit() {
+        //		console.log(window.location.href); // https://matthijskamstra.github.io/monkee-z/chain///
+        //		console.log(window.location.hostname); // matthijskamstra.github.io
+        //		console.log(window.location.pathname); // /monkee-z/chain/
+
+        var root = rootGit;
+        if (window.location.href.indexOf('docs') != -1) {
+            root = rootLocal;
+        }
+        console.log(root);
+        var arr = [];
+        var arr2 = [];
+        var nav = document.getElementsByTagName('nav')[0];
+        var l = nav.getElementsByTagName('a');
+        for (var i = 0; i < l.length; i++) {
+            arr.push(l[i].href);
+            if (l[i].getAttribute('href') != null)
+                arr2.push(l[i])
+        }
+        for (var i = 0; i < arr2.length; i++) {
+            var link = arr2[i];
+            var href = link.getAttribute('href');
+            link.setAttribute('href', root + href);
+        }
+
+    }
+</script>
