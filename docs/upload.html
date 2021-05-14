@@ -24,59 +24,28 @@
     <div data-load="./components/nav.html"></div>
     <div data-load="./components/hero.html"></div>
 
-
     <main>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-sm-8 col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h1>Photo Watermark</h1>
-                            <form id="photo-watermark">
-                                <!-- <div class="form-group">
-                                    <label for="formGroupExampleInput">Example label</label>
-                                    <input type="text" class="form-control" id="formGroupExampleInput"
-                                        placeholder="What is your name">
-                                </div> -->
-                                <div class="form-group" style="display:none">
-                                    <label for="exampleFormControlFile1">Example file input</label>
-                                    <input type="file" class="form-control-file" id="exampleFormControlFile1"
-                                        accept="image/*">
-                                </div>
 
-                                <div class="form-group">
-                                    <span class="fileSelect">
-                                        <img src="" id="filePreview" class="img-fluid img-thumbnail"
-                                            alt="Responsive image">
-                                    </span>
-                                    <span id="filePreviewText" class="text-muted"></span>
-                                    <button class="fileSelect btn btn-dark btn-block">Select an image file
-                                        (jpg/png)</button>
-                                </div>
-
-                                <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-                            </form>
-                            <div id="container-canvas">
-                                <canvas id="canvas-watermark"></canvas>
-                                <div class="btn-group" role="group" aria-label="Basic example">
-                                    <button id="btn-download" class="btn btn-dark">download</button>
-                                    <button id="btn-base64" class="btn btn-dark d-none">base64</button>
-                                    <button id="btn-base64-2" class="btn btn-dark">open in tab</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Use <code>.csv</code> estimate file</label>
+                        <input class="form-control" type="file" id="formFile">
                     </div>
-                    <!-- /.card -->
+                    <span id="filePreviewText" class="text-muted"></span>
+
                 </div>
-                <!-- /.col-6 -->
-
-
-
-
             </div>
         </div>
         <!-- /.container -->
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div id="csv-table"></div>
+                </div>
+            </div>
+        </div>
     </main>
     <!-- /#main -->
 
@@ -94,8 +63,9 @@
     <!-- mermaid.js -->
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 
-    <!-- custom -->
-    <script src="js/upload.js"></script>
+    <!-- Fonkee -->
+    <script src="js/FonkeeMain.js"></script>
+    <script src="js/FunkeeUpload.js"></script>
 
 
 

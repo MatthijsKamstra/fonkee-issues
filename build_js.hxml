@@ -1,7 +1,8 @@
+
 -lib thx.csv
 -cp src
--main MainJs
--js docs/js/csv_2_git.js
+-main FunkeeUpload
+-js docs/js/FunkeeUpload.js
 -D js-es=6
 --debug
 --dce full
@@ -11,8 +12,8 @@
 
 -lib thx.csv
 -cp src
--main UploadFile
--js docs/js/upload.js
+-main FonkeeMain
+-js docs/js/FonkeeMain.js
 -D js-es=6
 --debug
 --dce full
