@@ -1,0 +1,8 @@
+-lib thx.csv
+-cp src
+-main FonkeeMain
+-js docs/js/FonkeeMain.js
+# -D js-es=6
+# --debug
+# --dce full
+# --dce no

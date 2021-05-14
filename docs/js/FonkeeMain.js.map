@@ -1,8 +1,0 @@
-{
-"version":3,
-"file":"FonkeeMain.js",
-"sourceRoot":"file:///",
-"sources":["/Users/matthijs/Documents/GIT/fonkee-issues/src/FonkeeMain.hx","/usr/local/lib/haxe/std/haxe/iterators/ArrayIterator.hx"],
-"names":[],
-"mappings":";;;eAMuB;AAAA,EAAtB;AAAsB,EACrB,iCAA0B,mBAAoB,gBAAgB;AAAA,GAC7D,oBAAa;AADgD,GAE7D;AAF6D;AADzC;QAQrB;AAAA;AAAA;gBAIA;AAAA,IAAI,8BAA8B,WAAU,IAAI;AAAA,GAC/C,YAAY;AADmC,GAE/C,wBAAiB,UAAO;AAFuB;AAAhD;eAOA;AAAA,YAAU;AAAV;;;oBCEF;AAAA,EAEmB,AAAlB,eAAkB;AAFnB,EASE,aAAa;AATf;WAiBE;AAAA,SAAO,eAAU;AAAjB;QAQA;AAAA,SAAO,WAAM;AAAb;;;;;"
-}

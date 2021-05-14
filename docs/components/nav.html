@@ -11,6 +11,9 @@
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="issues.html">Issues Example</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="upload.html">Upload</a>
                 </li>
                 <li class="nav-item">
@@ -26,15 +29,14 @@
 <script>
     console.warn('Nav Injected code: Here be dragons!');
 
-
     var rootLocal = 'http://127.0.0.1:5500/docs/';
     var rootGit = 'https://matthijskamstra.github.io/fonkee-issues/';
 
     zinit();
     function zinit() {
-        console.log('> href: ' + window.location.href); // https://matthijskamstra.github.io/monkee-z/chain///
-        console.log('> hostname: ' + window.location.hostname); // matthijskamstra.github.io
-        console.log('> pathname: ' + window.location.pathname); // /monkee-z/chain/
+        // console.log('> href: ' + window.location.href); // https://matthijskamstra.github.io/monkee-z/chain///
+        // console.log('> hostname: ' + window.location.hostname); // matthijskamstra.github.io
+        // console.log('> pathname: ' + window.location.pathname); // /monkee-z/chain/
 
         var root = rootGit;
         if (window.location.href.indexOf('docs') != -1) {
@@ -42,7 +44,7 @@
             //console.log(window.location.href.split('docs')[0]);
             root = window.location.href.split('docs')[0] + 'docs/'
         }
-        console.log(root);
+        // console.log(root);
 
         var arr = [];
         var arr2 = [];

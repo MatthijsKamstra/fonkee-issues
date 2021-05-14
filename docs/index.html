@@ -27,83 +27,206 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h2>Mermaid</h2>
 
-                <a href="https://mermaid-js.github.io/mermaid/#/"
-                    target="_blank">https://mermaid-js.github.io/mermaid/#/</a>
+                <h1 id="toc_0">Fonkee Issues</h1>
 
-                <p class="badge">.mermaid (small gantt)</p>
-                <div class="mermaid">
-                    gantt
-                    title A Gantt Diagram
-                    dateFormat YYYY-MM-DD
-                    section Section
-                    A task :a1, 2014-01-01, 30d
-                    Another task :after a1 , 20d
-                    section Another
-                    Task in sec :2014-01-12 , 12d
-                    another task : 24d
+
+                <p>Goal of this project is to convert data from sheets/excell into information that work with gitlab.
+                </p>
+
+                <p>His should fix <q>problems</q> with</p>
+
+                <ul>
+                    <li>planning</li>
+                    <li>issues with estimates</li>
+                </ul>
+
+                <p>How to convert sheets/excel to files that work gitlab.</p>
+
+                <h2 id="toc_1">Basic idea</h2>
+
+                <p>You create an estimate based upon a predefined <a href="data/estimate_2021.csv">template</a>.
+                </p>
+
+                <p>It has</p>
+
+                <ul>
+                    <li>Section : where is this component (example: <code>UX Design</code>)</li>
+                    <li>Title: what is it (example: <code>Flowcharts</code>)</li>
+                    <li>Description: some extra information (example: <code>We need to investigate</code>)</li>
+                    <li>Estimate: how much time to build (example: <code>4h</code>)</li>
+                </ul>
+
+                <h2 id="toc_2">Current state</h2>
+
+                <p>Create default, basic <code>.csv</code> files via <code>src/ExampleFiles.hx</code></p>
+
+                <ul>
+                    <li><a href="data/estimate_2021.csv">estimate_2021.csv file with markdown examples</a></li>
+                    <li><a href="data/planning_2021.csv">planning_2021.csv file with 2021 year planning</a></li>
+                </ul>
+
+                <p>Convert default <code>.csv</code> files via <code>src/ExampleMain.hx</code> to usalbe files for
+                    gitlab issues and
+                    mermaid gantt planning</p>
+
+                <ul>
+                    <li><a href="data/estimate_2021.csv.converted.csv">estimate_2021.csv.converted.csv file for
+                            import into
+                            Giblab</a></li>
+                    <li><a href="data/planning_2021.csv.converted.md">planning_2021.csv.converted.md markdown file
+                            mermaid
+                            planning</a></li>
+                </ul>
+
+                <p>Extra file is generated from the <code>estimate_2021.csv</code> into a Mermaid Gantt planning. This
+                    file is weird
+                    because you have not set the date, but a planning is better then no planning.</p>
+
+                <ul>
+                    <li><a href="data/estimate_2021.csv.planning.converted.md">estimate_2021.csv.planning.converted.md
+                            file for
+                            import into Giblab</a></li>
+                </ul>
+
+                <p>If there is no planning, the estimate is a fine way of getting the information into gitlab. Change
+                    the starting dates
+                    and its workable.</p>
+
+                <h2 id="toc_3">(Gitlab) Issues</h2>
+
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Section</th>
+                            <th>Title</th>
+                            <th></th>
+                            <th>Description</th>
+                            <th>Estimate</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>UX design</td>
+                            <td>flowcharts</td>
+                            <td></td>
+                            <td>do</td>
+                            <td>4h</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>wireframes</td>
+                            <td></td>
+                            <td>do 2</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>Visual design</td>
+                            <td>invision</td>
+                            <td></td>
+                            <td>x</td>
+                            <td>8h</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <ul>
+                    <li><code>Section</code> is added from the first time it appears, needs to start with section</li>
+                    <li><code>Title</code> needed (no title, no entry in export)</li>
+                    <li><code>Description</code> can have markdown features and enters for next lines.</li>
+                    <li><code>Estimates</code> in 4, 4h, 4d 4w</li>
+                </ul>
+
+                <p>this sheet information will be translated to an csv you can import into gitlab</p>
+
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>title</th>
+                            <th>description</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>UX design - flowcharts</td>
+                            <td>do \n /estimate 4h</td>
+                        </tr>
+                        <tr>
+                            <td>UX design - wireframes</td>
+                            <td>do 2 \n /estimate 4h</td>
+                        </tr>
+                        <tr>
+                            <td>Visual design - invision</td>
+                            <td>x \n /estimate 8h</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="toc_4">Mermaid</h2>
+
+                <p>gantt for planning</p>
+
+                <p><a
+                        href="https://mermaid-js.github.io/mermaid/#/gantt">https://mermaid-js.github.io/mermaid/#/gantt</a>
+                </p>
+
+                <p>sheet specs</p>
+
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Phase</th>
+                            <th>Title</th>
+                            <th>week 10</th>
+                            <th>week 11</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>1 maart</td>
+                            <td>8 maart</td>
+                        </tr>
+                        <tr>
+                            <td>Server</td>
+                            <td>Acceptance</td>
+                            <td>x</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Production</td>
+                            <td></td>
+                            <td>x</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>Phase will group the different titles in sections. And will be repeated if not set (in our example:
+                    <code>acceptance</code> and <code>production</code> will be in the section <code>Server</code>)
+                </p>
+
+                <h2 id="toc_5">Gant example</h2>
+
+                <div>
+                    <pre class="line-numbers"><code class="language-mermaid">gantt
+    title A Gantt Diagram
+    %% this is a comment
+    dateFormat  YYYY-MM-DD
+    excludes    weekends
+
+    section Section
+    A task           :a1, 2014-01-01, 30d
+    Another task     :after a1  , 20d
+    section Another
+    Task in sec      :2014-01-12  , 12d
+    another task      : 24d
+    ```</code></pre>
                 </div>
-
-                <p class="badge">.mermaid (my gantt)</p>
-                <div class="mermaid">
-                    gantt
-                    title A Gantt Diagram
-                    dateFormat YYYY-MM-DD
-                    excludes weekends
-
-                    %% section Section
-                    %% A task :a1, 2014-01-01, 30d
-                    %% Another task :after a1 , 20d
-                    %% section Another
-                    %% Task in sec :2014-01-12 , 12d
-                    %% another task : 24d
-
-
-                    section Start project
-                    Briefing :2021-12-27, 5d
-                    Research :2021-06-14, 5d
-                    Estimate :2021-02-22, 5d
-                    Meeting :2021-06-07, 5d
-
-                    section Design
-                    Scope :2021-07-26, 5d
-                    Research :2021-03-22, 5d
-                    Handover :2021-03-22, 5d
-
-                    section Development
-                    Team meet :2021-01-11, 5d
-                    Setup Git :2021-05-31, 5d
-                    Server setup :2021-02-08, 5d
-
-
-                </div>
-
-                <p class="badge">#planning (my gantt dynamic)</p>
-
-
-                <a href="data/planning_2021.csv">data/planning_2021.csv</a>
-                <pre><code data-load-inner="data/planning_2021.csv"></code></pre>
-                <a href="data/planning_2021.csv.converted.md">data/planning_2021.csv.converted.md</a>
-                <pre><code data-load-inner="data/planning_2021.csv.converted.md"></code></pre>
-
-                <div id="planning"></div>
-
-
-
-
-                <p class="badge">#planning2 (my gantt dynamic)</p>
-
-                <a href="data/estimate_2021.csv">data/estimate_2021.csv</a>
-                <pre><code data-load-inner="data/estimate_2021.csv"></code></pre>
-
-                <a href="data/estimate_2021.csv.converted.csv">data/estimate_2021.converted.md</a>
-                <pre><code data-load-inner="data/estimate_2021.csv.converted.csv"></code></pre>
-
-                <a href="data/estimate_2021.csv.planning.converted.md">data/estimate_2021.csv.planning.converted.md</a>
-                <pre><code data-load-inner="data/estimate_2021.csv.planning.converted.md"></code></pre>
-
-                <div id="planning2"></div>
             </div>
         </div>
     </div>
@@ -123,56 +246,6 @@
 
     <!-- Fonkee -->
     <script src="js/FonkeeMain.js"></script>
-
-    <script>
-
-        // Fetch API data
-        fetch('data/planning_2021.csv.converted.md')
-            .then(function (response) {
-                return response.text();
-            })
-            .then(function (data) {
-                // console.log(data);
-                var element = document.getElementById('planning');
-
-                var insertSvg = function (svgCode, bindFunctions) {
-                    element.innerHTML = svgCode;
-                };
-
-                var graphDefinition = data.replaceAll('```mermaid', '').replaceAll('```', '').trim();
-                // console.log(graphDefinition);
-                var graph = mermaid.mermaidAPI.render('planningWrapper', graphDefinition, insertSvg);
-            });
-
-        // Fetch API data
-        fetch('data/estimate_2021.csv.planning.converted.md')
-            .then(function (response) {
-                return response.text();
-            })
-            .then(function (data) {
-                //console.log(data);
-                var element2 = document.getElementById('planning2');
-                //console.log(element);
-
-                var insertSvg2 = function (svgCode, bindFunctions) {
-                    element2.innerHTML = svgCode;
-                };
-
-                var graphDefinition2 = data.replaceAll('```mermaid', '').replaceAll('```', '').trim();
-                // console.log(graphDefinition);
-                var graph2 = mermaid.mermaidAPI.render('planningWrapper2', graphDefinition2, insertSvg2);
-            });
-
-
-
-    </script>
-
-    <script>
-        mermaid.initialize({
-            startOnLoad: true,
-            'theme': 'neutral'
-        });
-    </script>
 
 
 </body>

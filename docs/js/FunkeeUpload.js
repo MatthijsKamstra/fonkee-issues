@@ -645,6 +645,7 @@ class js_Boot {
 			try {
 				tostr = o.toString;
 			} catch( _g ) {
+				haxe_NativeStackTrace.lastError = _g;
 				return "???";
 			}
 			if(tostr != null && tostr != Object.toString && typeof(tostr) == "function") {
@@ -688,12 +689,14 @@ class thx_Error extends Error {
 			try {
 				stack = haxe_CallStack.exceptionStack();
 			} catch( _g ) {
+				haxe_NativeStackTrace.lastError = _g;
 				stack = [];
 			}
 			if(stack.length == 0) {
 				try {
 					stack = haxe_CallStack.callStack();
 				} catch( _g ) {
+					haxe_NativeStackTrace.lastError = _g;
 					stack = [];
 				}
 			}
@@ -841,6 +844,7 @@ class thx_csv_core_Parser {
 				++this.pos;
 			}
 		} catch( _g ) {
+			haxe_NativeStackTrace.lastError = _g;
 			let e = haxe_Exception.caught(_g).unwrap();
 			console.log("thx/csv/core/Parser.hx:39:",e);
 			throw new thx_Error("unable to parse at pos " + this.pos + ": " + Std.string(e),null,{ fileName : "thx/csv/core/Parser.hx", lineNumber : 40, className : "thx.csv.core.Parser", methodName : "parse"});
