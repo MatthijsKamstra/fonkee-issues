@@ -28,25 +28,120 @@
         <div class="row">
             <div class="col">
 
+
+
                 <h1 id="toc_0">Fonkee Issues</h1>
 
+                <p><img src="../icon.png" alt=""></p>
 
-                <p>Goal of this project is to convert data from sheets/excell into information that work with gitlab.
-                </p>
+                <p>Goal of this project is to make the transition from planning by PO/Project Manager, to working in
+                    gitlab with gitlab
+                    issues by Developers.</p>
+
+                <p>We should use the tools we are most familiar with, so for Planning/Estimates that would be
+                    sheets/Excel.</p>
+
+                <p>Because I don&rsquo;t like to repeat stuff done by others (DRY), I made an effort to convert data
+                    from sheets/Excel
+                    into information that work with gitlab (issues).</p>
 
                 <p>His should fix <q>problems</q> with</p>
 
                 <ul>
-                    <li>Issues in Gitlab</li>
-                    <li>Issues with estimates (in Gitlab)</li>
-                    <li>Gantt Planning in Mermaid</li>
+                    <li>Getting all the issues in Gitlab</li>
+                    <li>Getting all the issues with estimates (in Gitlab)</li>
+                    <li>And have a better idea of the planning via Gantt Planning in Mermaid (mermaid is a gitlab
+                        feature )</li>
                 </ul>
+
+                <p>This is probably not the holy grail but if someone put time into creating a sheet with descriptions
+                    and perhaps
+                    estimate, it&rsquo;s an effort worth preserving and continue working on.</p>
+
+                <h2 id="toc_1">how does it work</h2>
+
+                <p>Working with Gitlab it&rsquo;s possible to import issues via <code>.csv</code>.</p>
+
+                <p><img src="docs/img/import.png" alt=""></p>
+
+                <p>But this is a very limited csv format:</p>
+
+                <div>
+                    <pre class="line-numbers"><code class="language-csv">&quot;title&quot;,&quot;description&quot;
+&quot;one&quot;,&quot;description one&quot;
+&quot;two&quot;,&quot;description two&quot;</code></pre>
+                </div>
+
+                <p>imported it would look something like</p>
+
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>title</th>
+                            <th>description</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>one</td>
+                            <td>description one</td>
+                        </tr>
+                        <tr>
+                            <td>two</td>
+                            <td>description two</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="toc_2">using the limitation</h2>
+
+                <p>After experimenting I found that this is flexible enough to work with:</p>
+
+                <p><strong>title</strong></p>
+
+                <ul>
+                    <li>use sections for example (<q>UX Design - Flowcharts</q>)</li>
+                    <li>emojis</li>
+                </ul>
+
+                <p><strong>descriptions</strong></p>
+
+                <ul>
+                    <li>hard returns</li>
+                    <li>emoji</li>
+                    <li>links</li>
+                    <li>markdown (gitlab version has checkboxes for example)</li>
+                    <li><code>/estimate 3h</code> works during import and adds that to the issue</li>
+                </ul>
+
+                <p>Example what is possible in description:</p>
+
+                <div>
+                    <pre class="line-numbers"><code class="language-markdown">yes import that also 👍
+
+- [ ] one
+- [ ] two
+- [ ] three
+
+Let&#39;s discuss this a bit,
+
+oh and this
+
+maybe more
+
+And some more
+
+🆙
+
+/estimate 4h</code></pre>
+                </div>
+
+                <h2 id="toc_3">Basic idea</h2>
 
                 <p>How to convert sheets/excel to files that work gitlab.</p>
 
-                <h2 id="toc_1">Basic idea</h2>
-
-                <p>You create an estimate based upon a predefined <a href="data/estimate_2021.csv">template</a>.
+                <p>You create an estimate based upon a predefined <a href="docs/data/estimate_2021.csv">template</a>.
                 </p>
 
                 <p>It has</p>
@@ -58,13 +153,13 @@
                     <li>Estimate: how much time to build (example: <code>4h</code>)</li>
                 </ul>
 
-                <h2 id="toc_2">Current state</h2>
+                <h2 id="toc_4">Current state</h2>
 
                 <p>Create default, basic <code>.csv</code> files via <code>src/ExampleFiles.hx</code></p>
 
                 <ul>
-                    <li><a href="data/estimate_2021.csv">estimate_2021.csv file with markdown examples</a></li>
-                    <li><a href="data/planning_2021.csv">planning_2021.csv file with 2021 year planning</a></li>
+                    <li><a href="docs/data/estimate_2021.csv">estimate_2021.csv file with markdown examples</a></li>
+                    <li><a href="docs/data/planning_2021.csv">planning_2021.csv file with 2021 year planning</a></li>
                 </ul>
 
                 <p>Convert default <code>.csv</code> files via <code>src/ExampleMain.hx</code> to usalbe files for
@@ -72,10 +167,10 @@
                     mermaid gantt planning</p>
 
                 <ul>
-                    <li><a href="data/estimate_2021.csv.converted.csv">estimate_2021.csv.converted.csv file for
+                    <li><a href="docs/data/estimate_2021.csv.converted.csv">estimate_2021.csv.converted.csv file for
                             import into
                             Giblab</a></li>
-                    <li><a href="data/planning_2021.csv.converted.md">planning_2021.csv.converted.md markdown file
+                    <li><a href="docs/data/planning_2021.csv.converted.md">planning_2021.csv.converted.md markdown file
                             mermaid
                             planning</a></li>
                 </ul>
@@ -85,7 +180,7 @@
                     because you have not set the date, but a planning is better then no planning.</p>
 
                 <ul>
-                    <li><a href="data/estimate_2021.csv.planning.converted.md">estimate_2021.csv.planning.converted.md
+                    <li><a href="docs/data/estimate_2021.csv.planning.converted.md">estimate_2021.csv.planning.converted.md
                             file for
                             import into Giblab</a></li>
                 </ul>
@@ -94,7 +189,7 @@
                     the starting dates
                     and its workable.</p>
 
-                <h2 id="toc_3">(Gitlab) Issues</h2>
+                <h2 id="toc_5">(Gitlab) Issues</h2>
 
                 <table class="table table-striped table-hover">
                     <thead>
@@ -165,7 +260,7 @@
                     </tbody>
                 </table>
 
-                <h2 id="toc_4">Mermaid</h2>
+                <h2 id="toc_6">Mermaid</h2>
 
                 <p>gantt for planning</p>
 
@@ -211,7 +306,7 @@
                     <code>acceptance</code> and <code>production</code> will be in the section <code>Server</code>)
                 </p>
 
-                <h2 id="toc_5">Gant example</h2>
+                <h2 id="toc_7">Gant example</h2>
 
                 <div>
                     <pre class="line-numbers"><code class="language-mermaid">gantt
@@ -228,8 +323,16 @@
     another task      : 24d
     ```</code></pre>
                 </div>
+
+                <h2 id="toc_8">Haxe</h2>
+
+                <p>This is a <a href="http://www.haxe.org">Haxe</a> project, read more about it in the <a
+                        href="README_HAXE.MD">README_HAXE.MD</a>!</p>
+
+
             </div>
         </div>
+    </div>
     </div>
 
     <div data-load="./components/footer.html"></div>

@@ -2,16 +2,83 @@
 
 ![](icon.png)
 
-Goal of this project is to convert data from sheets/excell into information that work with gitlab.
+Goal of this project is to make the transition from planning by PO/Project Manager, to working in gitlab with gitlab issues by Developers.
+
+We should use the tools we are most familiar with, so for Planning/Estimates that would be sheets/Excel.
+
+Because I don't like to repeat stuff done by others (DRY), I made an effort to convert data from sheets/Excel into information that work with gitlab (issues).
 
 His should fix "problems" with
 
-- planning
-- issues with estimates
+- Getting all the issues in Gitlab
+- Getting all the issues with estimates (in Gitlab)
+- And have a better idea of the planning via Gantt Planning in Mermaid (mermaid is a gitlab feature )
 
-How to convert sheets/excel to files that work gitlab.
+This is probably not the holy grail but if someone put time into creating a sheet with descriptions and perhaps estimate, it's an effort worth preserving and continue working on.
+
+## how does it work
+
+Working with Gitlab it's possible to import issues via `.csv`.
+
+![](docs/img/import.png)
+
+But this is a very limited csv format:
+
+```csv
+"title","description"
+"one","description one"
+"two","description two"
+```
+
+imported it would look something like
+
+| title | description    |
+| ----- | -------------- |
+| one   | description one |
+| two   | description two |
+
+## using the limitation
+
+After experimenting I found that this is flexible enough to work with:
+
+**title**
+
+- use sections for example ("UX Design - Flowcharts")
+- emojis
+
+**descriptions**
+
+- hard returns
+- emoji
+- links
+- markdown (gitlab version has checkboxes for example)
+- `/estimate 3h` works during import and adds that to the issue
+
+Example what is possible in description:
+
+```markdown
+yes import that also 👍
+
+- [ ] one
+- [ ] two
+- [ ] three
+
+Let's discuss this a bit,
+
+oh and this
+
+maybe more
+
+And some more
+
+🆙
+
+/estimate 4h
+```
 
 ## Basic idea
+
+How to convert sheets/excel to files that work gitlab.
 
 You create an estimate based upon a predefined [template](docs/data/estimate_2021.csv).
 
