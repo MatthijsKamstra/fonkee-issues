@@ -1,3 +1,5 @@
+import js.html.Element;
+import js.html.EmbedElement;
 import util.Emoji;
 import util.Debug;
 import thx.csv.*;
@@ -16,14 +18,15 @@ class FonkeeMain {
 	function init() {
 		Debug.debugFavicon();
 		showEstimate();
+		showEstimateConverted();
 	}
 
 	function showEstimate() {
-		var codeEstimate = document.getElementById('code-estimate');
-		if (codeEstimate == null)
+		var el = document.getElementById('code-estimate');
+		if (el == null)
 			return;
 
-		trace("codeEstimate: " + codeEstimate);
+		trace("showEstimate el: " + el);
 
 		window.fetch("data/estimate_2021.csv")
 			.then(function(response) {
@@ -31,11 +34,28 @@ class FonkeeMain {
 			})
 			.then(function(data) {
 				console.log(data);
-				convertData(data);
+				convertData(el, data);
 			});
 	}
 
-	function convertData(content:String) {
+	function showEstimateConverted() {
+		var el = document.getElementById('code-estimate-converted');
+		if (el == null)
+			return;
+
+		trace("showEstimateConverted el: " + el);
+
+		window.fetch("data/estimate_2021.csv.converted.csv")
+			.then(function(response) {
+				return response.text();
+			})
+			.then(function(data) {
+				console.log(data);
+				convertData(el, data);
+			});
+	}
+
+	function convertData(el:Element, content:String) {
 		var arr = thx.csv.Csv.decode(content);
 		trace(arr);
 		var html = '<table class="table table-striped table-hover">';
@@ -65,8 +85,7 @@ class FonkeeMain {
 		html += '</tbody>';
 		html += '</table>';
 
-		var div = document.getElementById('code-estimate');
-		div.innerHTML = html;
+		el.innerHTML = html;
 	}
 
 	static function main() {

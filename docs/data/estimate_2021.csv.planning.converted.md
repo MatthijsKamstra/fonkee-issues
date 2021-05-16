@@ -14,19 +14,19 @@ gantt
 
 
 	section Start project
-	Start project - Briefing		:2021-05-14, 5d
-	Start project - Research		:2021-05-14, 5d
-	Start project - Estimate		:2021-05-14, 5d
-	Start project - Meeting		:2021-05-14, 5d
+	Start project - Briefing		:2021-05-16, 5d
+	Start project - Research		:2021-05-16, 5d
+	Start project - Estimate		:2021-05-16, 5d
+	Start project - Meeting		:2021-05-16, 5d
 
 	section Design
-	Design - Scope		:2021-05-14, 5d
-	Design - Research		:2021-05-14, 5d
-	Design - Handover		:2021-05-14, 5d
+	Design - Scope		:2021-05-16, 5d
+	Design - Research		:2021-05-16, 5d
+	Design - Handover		:2021-05-16, 5d
 
 	section Development
-	Development - Team meet		:2021-05-14, 5d
-	Development - Setup Git		:2021-05-14, 5d
-	Development - Server setup		:2021-05-14, 5d
+	Development - Team meet		:2021-05-16, 5d
+	Development - Setup Git		:2021-05-16, 5d
+	Development - Server setup		:2021-05-16, 5d
 
 ```
