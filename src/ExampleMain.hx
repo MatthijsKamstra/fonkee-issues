@@ -69,6 +69,23 @@ class ExampleMain {
 				estimate = '0h';
 			}
 
+			var label:String = _arr[6];
+			if (label == null) {
+				label = '';
+			}
+			if (label.indexOf(' ') != -1) {
+				var l = label.split(' ');
+				label = '';
+				for (i in 0...l.length) {
+					var _l = l[i];
+					label += '\n/label ~${_l}';
+				}
+			} else {
+				if (label != '') {
+					label = '\n/label ~${label}';
+				}
+			}
+
 			// check if value has h, d, w?
 			// trace('${i}. (${estimate})' + estimate.length);
 			// trace('${i}. ${estimate.indexOf('h')}');
@@ -97,7 +114,7 @@ class ExampleMain {
 			// if (Std.parseInt(estimate) != 0) {
 			mapArr.push({
 				title: '${_title}',
-				description: '${description.replace('"', "'")}\n/estimate ${estimate}'
+				description: '${description.replace('"', "'")}\n/estimate ${estimate}${label}'
 			});
 			// }
 

@@ -51,6 +51,9 @@ And some more
 	];
 
 	var estimateArr = ['2d', '2h', '0', '5d', '7', '', '12h', '2d', '1h', '2'];
+	var labelArr = [
+		'Design', 'UX', 'Frontend', 'Todo', 'Frontend Backend', '', 'Unclear Frontend Backend', 'Research', 'Bug', 'Unclear'
+	];
 
 	public function new() {
 		trace('ExampleFiles');
@@ -115,7 +118,7 @@ And some more
 	}
 
 	function exportEstimate(source:String) {
-		var content = '"Section","Title","Page","Components","Description ","Estimate"\n';
+		var content = '"Section","Title","Page","Components","Description","Estimate","Label"\n';
 
 		var temp = '';
 		for (i in 0...titleArr.length) {
@@ -126,7 +129,7 @@ And some more
 		// content += ',,,,,,\n';
 
 		for (i in 0...10) {
-			content += '"${sectionArr[i]}","${titleArr[i]}","${pageArr[i]}","${componentsArr[i]}","${descriptionArr[i]}","${estimateArr[i]}"\n';
+			content += '"${sectionArr[i]}","${titleArr[i]}","${pageArr[i]}","${componentsArr[i]}","${descriptionArr[i]}","${estimateArr[i]}","${labelArr[i]}"\n';
 		}
 
 		sys.io.File.saveContent(source, content);
