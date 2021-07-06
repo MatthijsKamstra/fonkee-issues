@@ -85,7 +85,7 @@ class Mermaid {
 
 			var section = _arr[0];
 			if (section != '')
-				out += '\n\tsection ${Mermaid.cleanSection(section)}\n';
+				out += '\n\tsection ${Mermaid.cleanSection(section).replace('/', '_').replace(':', '_')}\n';
 
 			// need the time for a project
 			var temp = '';
