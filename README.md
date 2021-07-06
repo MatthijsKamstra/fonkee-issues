@@ -54,6 +54,8 @@ After experimenting I found that this is flexible enough to work with:
 - markdown (gitlab version has checkboxes for example)
 - `/estimate 3h` works during import and adds that to the issue
 
+source: https://docs.gitlab.com/ee/user/project/time_tracking.html
+
 Example what is possible in description:
 
 ```markdown
@@ -75,6 +77,23 @@ And some more
 
 /estimate 4h
 ```
+
+Note:
+
+- https://gitlab.com/gitlab-org/gitlab/-/issues/29705#note_265119985
+- https://docs.gitlab.com/ee/user/project/quick_actions.html
+
+It's also possible to add:
+
+```
+This is a description. Notice how we can use quick actions to define issue meta data upon creation of the issue.
+
+/milestone %12.8
+/label ~bug
+/estimate 2h
+/weight 3
+```
+
 
 ## Basic idea
 
